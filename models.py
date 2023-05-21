@@ -8,6 +8,7 @@ Frame._client = MongoClient(os.getenv('MONGO_URI'))
 
 class User(Frame):
     _fields = {
+       'user_id',
        'username',
        'password',
        'image',

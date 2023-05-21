@@ -1,0 +1,55 @@
+{% extends 'base.j2' %}
+{% block content %}
+<div class="mail-container">
+    <div class="sidebar">
+        <div class="mail-options">
+            <div class="mail">
+                <ul>
+                    <li>Inbox</li>
+                    <li>Sent</li>
+                    <li>Draft</li>
+                </ul>
+            </div>
+            <div class="mail-features">
+               <h3>features</h3> 
+                <ul>
+                    <li>Calendar</li>
+                    <li>Contacts</li>
+                </ul>
+            </div>
+        </div>
+        <div class="profile">
+           <img src="" alt="">
+           <p>Paul Doe</p>
+           <button>logout</button>
+        </div>
+    </div>
+    <div class="main-content">
+        <div class="content-header">
+           <div class="contact-content">
+             <img src="" alt="">
+             <h2>Patricia Doe</h2>
+             <p>Lawyer</p>
+           </div>
+        </div>
+        <div class="main-content-window">
+           <p>Aug, 22 2023</p>
+           <p>
+            futyftyuyiyuirtyufrtufrutfrtutu
+            yrtdrtyrtsyrweertuw46w4w445wyt4qw34528o5t
+            ertwetyw4t34634634yy345y4ey64du5tyjut5r75e
+           </p>
+           <div class="mail-button">
+             <button>+</button>
+           </div>
+        </div>
+        <div class="mail-composer">
+           <form method="post">
+              <textarea name="message" placeholder="Say something.."></textarea>
+              <button>Send</button>
+           </form>    
+        </div>
+    </div>
+</div>
+
+{% endblock %}
