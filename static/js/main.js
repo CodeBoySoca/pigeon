@@ -1,14 +1,10 @@
+ const date = new Date()
+ let day = date.getDate()
 
 
-<div class="contact-list">
-           <input type="text" name="search" placeholder="Search contacts">
-           <div class="contacts">
-                <div class="contact-image">
-                    <img src="" alt="contact image">
-                </div>
-                <ul>
-                    <li>Patricia Doe</li>
-                    <li>Lawyer</li>
-                </ul>
-           </div>
-        </div>
+const cells = document.querySelectorAll('td');
+cells.forEach(function(cell) {
+  if(cell.innerHTML == day){
+      cell.setAttribute('id', 'selectedItem')
+  }  
+})
