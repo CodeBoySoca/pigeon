@@ -7,6 +7,10 @@ html {
     box-sizing: border-box;
 }
 
+ul li {
+    list-style-type: none;
+}
+
 .mail-container {
     display: flex;
     flex-direction: row;
@@ -48,7 +52,7 @@ html {
 
 .mail-features {
     width: 75%;
-    margin-top: 15%;
+    margin-top: 25%;
 }
 
 .mail-features h3 {
@@ -106,7 +110,7 @@ html {
     width: 50%;
     margin: 15% auto 0 auto;
     position: relative;
-    bottom: -300px;
+    bottom: -350px;
 }
 
 
@@ -235,7 +239,6 @@ table tr #selectedItem {
     height: 50px;
     background: none;
     cursor: pointer;
-
 }
 
 
@@ -319,6 +322,105 @@ table tr #selectedItem {
     width: 75%;
 }
 
+
+/* Contacts */
+
+
+.contact-header {
+    width: 50%;
+    height: 750px;
+    background: #ffffff;
+    filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.3));
+    border-radius: 25px;
+    margin: 8% auto 0 auto;
+}
+
+.contact-header .contact {
+    width: 40%;
+    margin: 0 auto;
+    padding: 5%;
+}
+
+.contact-header .contact img {
+    width: 96px;
+    height: 96px;
+    border-radius: 50%;
+    border: 2px solid #fafafa;
+    margin: 0 auto 15px auto;
+    display: block;
+
+}
+
+.contact-header .contact h2 {
+    color: #201f1f;
+    font: normal 900 2em "dejanire-sans", sans-serif;
+    text-align: center;
+}
+
+.contact-header .contact p {
+    color: #201f1f;
+    font: normal 200 1em "dejanire-sans", sans-serif;
+    text-align: center;
+}
+
+
+.contact-details ul {
+    width: 80%;
+    margin: 50px auto 0 auto;
+}
+
+.contact-details ul li {
+    color: #201f1f;
+    font: normal 600 1.2em "dejanire-sans", sans-serif;
+    margin-bottom: 15px;
+}
+
+
+.contact-details span {
+    color: #686868;
+    font: normal 500 1em "dejanire-sans", sans-serif;
+    text-align: center;
+    margin-right: 10px;
+}
+
+
+.contact-details p {
+    line-height: 2em !important;
+}
+
+.contact-details p:first-of-type {
+    color: #686868;
+    font: normal 500 1.2em "dejanire-sans", sans-serif;
+    text-align: left;
+    width: 80%;
+    margin: 0 auto 0 auto;
+}
+
+.contact-details p:last-child {
+    color: #201f1f;
+    font: normal 500 1.2em "dejanire-sans", sans-serif;
+    text-align: left;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.contact-header button:first-of-type {
+    margin: 0 25px 0 60px;
+}
+
+
+.contact-header button {
+    margin-top: 35px;
+    border: 2px solid #fe176c;
+    color: #fe176c;
+    font: normal 100 1em "dejanire-sans", sans-serif;
+    width: 35%;
+    height: 50px;
+    background: none;
+    cursor: pointer;
+}
+
+/**************/
 
 /* main window header */
 

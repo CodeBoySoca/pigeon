@@ -20,11 +20,11 @@ def mailbox():
 
 @app.route('/mailbox/sent')
 def mailbox_sent():
-    pass
+    return render_template('sent.j2')
 
 @app.route('/mailbox/draft')
 def mailbox_draft():
-    pass
+    return render_template('draft.j2')
 
 @app.route('/calendar')
 def pigeon_calendar():
@@ -34,7 +34,7 @@ def pigeon_calendar():
 
 @app.route('/contacts')
 def contacts():
-    pass
+    return render_template('contacts.j2')
 
 
 if __name__ == '__main__':
