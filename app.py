@@ -17,13 +17,24 @@ def logout():
 def mailbox():
     return render_template('mailbox.j2')
 
+
+@app.route('/mailbox/sent')
+def mailbox_sent():
+    pass
+
+@app.route('/mailbox/draft')
+def mailbox_draft():
+    pass
+
 @app.route('/calendar')
 def pigeon_calendar():
     cal = calendar.HTMLCalendar(firstweekday=0)
     d = datetime.datetime.today()
     return render_template('calendar.j2', calendar=cal.formatmonth(d.year, d.month))
 
-
+@app.route('/contacts')
+def contacts():
+    pass
 
 
 if __name__ == '__main__':

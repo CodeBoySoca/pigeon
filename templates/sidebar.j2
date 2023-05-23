@@ -6,16 +6,16 @@
          </div>
         <div class="mail">
             <ul>
-                <li><i class="fa-solid fa-envelope"></i>Inbox</li>
-                <li><i class="fa-solid fa-envelope-circle-check"></i>Sent</li>
-                <li><i class="fa-solid fa-file"></i>Draft</li>
+                <li><a href="{{ url_for('mailbox')}}"><i class="fa-solid fa-envelope"></i>Inbox</a></li>
+                <li><a href="#"><i class="fa-solid fa-envelope-circle-check"></i>Sent</a></li>
+                <li><a href="#"><i class="fa-solid fa-file"></i>Draft</a></li>
             </ul>
         </div>
         <div class="mail-features">
            <h3>features</h3> 
             <ul>
-                <li><i class="fa-regular fa-calendar"></i>Calendar</li>
-                <li><i class="fa-regular fa-address-card"></i>Contacts</li>
+                <li><a href="{{ url_for('pigeon_calendar')}}"><i class="fa-regular fa-calendar"></i>Calendar</a></li>
+                <li><a href=""><i class="fa-regular fa-address-card"></i>Contacts</a></li>
             </ul>
         </div>
     </div>

@@ -35,11 +35,15 @@ html {
 }
 
 .mail ul li {
-    font: normal 700 1.5em "dejanire-sans", sans-serif;
-    color: #fafafa;
-    margin-bottom: 30px;
-    cursor: pointer;
     list-style-type: none;
+    margin-bottom: 30px;
+}
+
+
+.mail ul li a {
+    font: normal 700 1.4em "dejanire-sans", sans-serif;
+    color: #fafafa;
+    text-decoration: none;
 }
 
 .mail-features {
@@ -66,11 +70,14 @@ html {
 }
 
 .mail-features ul li {
-    font: normal 700 1.5em "dejanire-sans", sans-serif;
-    color: #fafafa;
     margin-bottom: 30px;
-    cursor: pointer;
     list-style-type: none;
+}
+
+.mail-features ul li a {
+    font: normal 700 1.4em "dejanire-sans", sans-serif;
+    color: #fafafa;
+    text-decoration: none;
 }
 
 
@@ -122,7 +129,7 @@ html {
 
 .calendar {
     border: none;
-    width: 85%;
+    width: 100%;
 
 }
 
@@ -133,7 +140,7 @@ html {
 
 .month {
     width: 100%;
-    height: 75px;
+    height: 95px;
     font: normal 900 1.4em "dejanire-sans", sans-serif;
     color: #cb1e5e;
 }
@@ -158,17 +165,79 @@ table th {
 }
 
 table tr td {
-    font: normal 100 1em "dejanire-sans", sans-serif;
+    font: normal 100 0.9em "dejanire-sans", sans-serif;
     padding: 3%;
-    text-align: center;
+    text-align: left;
     color: #201f1f;
     width: 5%;
+    border: 1px solid rgba(239, 239, 239, 0.8);
 }
 
 table tr #selectedItem {
     background: #fe176c;
     color: #fafafa;
 }
+
+
+.calendar-event {
+    width: 50%;
+    padding: 25px 0;
+    margin: 0 auto;
+}
+
+.calendar-event h3 {
+    text-align: center;
+    font: normal 900 1.2em "dejanire-sans", sans-serif;
+    color: #cb1e5e;
+    text-transform: capitalize;
+    margin-bottom: 25px;
+
+
+}
+
+.calendar-event form {
+    width: 75%;
+    margin: 0 auto;
+}
+
+
+.calendar-event form input {
+    border: 1px solid #e1e1e1;
+}
+
+
+.calendar-event form input[type='date'] {
+    width: 99%;
+    height: 40px;
+    outline: none;
+}
+
+.calendar-event form input[type='text'] {
+    width: 99%;
+    height: 40px;
+    margin-top: 25px;
+    outline: none;
+}
+
+#btn {
+    margin-right: 30px;
+    margin-left: 0px;
+}
+
+
+
+.calendar-event form input[type='button'] {
+    margin-top: 35px;
+    border: 2px solid #fe176c;
+    color: #fe176c;
+    font: normal 100 1em "dejanire-sans", sans-serif;
+    width: 45%;
+    height: 50px;
+    background: none;
+    cursor: pointer;
+
+}
+
 
 /****************/
 
@@ -328,7 +397,7 @@ table tr #selectedItem {
 }
 
 .mail-composer form {
-    width: 65%;
+    width: 75%;
     height: 300px;
     margin: 0 auto;
 }

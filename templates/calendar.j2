@@ -4,6 +4,15 @@
 {% include 'sidebar.j2' %}
  <div class="calendar">
   {{ calendar }}
+  <div class="calendar-event">
+     <h3>Calendar Event</h3>
+    <form method="post"> 
+     <input type="date" name="event_date" placeholder="Start date">
+     <input type="text" name="event" placeholder="Add event"><br>
+     <input type="button" value="Save" id="btn">
+     <input type="button" value="Delete">
+    </form>
+  </div>
  </div> 
 </div>
 {% endblock %}
