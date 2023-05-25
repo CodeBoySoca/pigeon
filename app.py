@@ -1,12 +1,26 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 import datetime
 import uuid
 import calendar
 from models import *
 app = Flask(__name__)
 
-@app.route('/')
+@app.route('/', methods=['GET', 'POST'])
 def index():
+    if request.method == 'POST':
+        name = request.form.get('name')
+        username = request.form.get('username')
+        email = request.form.get('email')
+        password = request.form.get('password')
+        confirm_password = request.form.get('confirm-password')
+        if password == confirm_password:
+            User(
+              name=name,
+              username=username,
+              email=email,
+              password=User.hash_password(password)  
+            ).insert()
+            return render_template('mailbox.j2', username=username)
     return render_template('login.j2')
 
 @app.route('/logout')

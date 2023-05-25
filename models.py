@@ -1,6 +1,7 @@
 from mongoframes import *
 from pymongo import MongoClient
 from dotenv import load_dotenv
+from passlib.hash import pbkdf2_sha256
 import os
 load_dotenv('.env')
 
@@ -15,6 +16,9 @@ class User(Frame):
        'creation_date',
        'messages'
     }
+
+    def hash_password(password):
+        return pbkdf2_sha256.hash(password)
 
 
 class Message(SubFrame):

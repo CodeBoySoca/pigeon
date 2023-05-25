@@ -368,6 +368,7 @@ table tr #selectedItem {
     color: #cb1e5e;
     background: none;
     margin: 50px 0 25px 0;
+    cursor: pointer;
 }
 
 .login span {
