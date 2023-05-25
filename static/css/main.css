@@ -322,6 +322,68 @@ table tr #selectedItem {
     width: 75%;
 }
 
+/* Login */
+
+
+
+.login {
+    width: 25%;
+    height: 650px;
+    background: #ffffff;
+    filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.3));
+    border-radius: 25px;
+    margin: 8% auto 0 auto;
+    padding: 2%;
+}
+
+.login form {
+    margin: 5% auto 0 auto;
+    width: 90%;
+}
+
+.login h2 {
+    font: normal 800 2em "dejanire-sans", sans-serif;
+    color: #201f1f;
+    text-transform: capitalize;
+    margin: 5% auto 0 auto;
+    text-align: center;
+}
+
+.login input::placeholder {
+    padding-left: 5px;
+}
+
+.login input {
+    width: 95%;
+    height: 50px;
+    background: #ffffff;
+    border: 1px solid #e1e1e1;
+    margin-top: 25px;
+}
+
+.login input[type='submit'] {
+    width: 95%;
+    height: 60px;
+    border: 2px solid #cb1e5e;
+    color: #cb1e5e;
+    background: none;
+    margin: 50px 0 25px 0;
+}
+
+.login span {
+    color: #201f1f;
+    font: normal 200 1em "dejanire-sans", sans-serif;
+    text-align: center;
+    margin: 0 auto;
+    width: 75%;
+    display: block;
+}
+
+.login a {
+    color: #201f1f;
+    font: normal 200 1em "dejanire-sans", sans-serif;
+    padding-left: 5px;
+}
 
 /* Contacts */
 
