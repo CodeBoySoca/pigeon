@@ -322,11 +322,22 @@ table tr #selectedItem {
     width: 75%;
 }
 
-/* Login */
+/* Sign up and Sign in */
 
 
 
-.login {
+.signin {
+    width: 25%;
+    height: 400px;
+    background: #ffffff;
+    filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.3));
+    border-radius: 25px;
+    margin: 8% auto 0 auto;
+    padding: 2%;
+}
+
+
+.signup {
     width: 25%;
     height: 650px;
     background: #ffffff;
@@ -336,12 +347,14 @@ table tr #selectedItem {
     padding: 2%;
 }
 
-.login form {
+.signup form,
+.signin form {
     margin: 5% auto 0 auto;
     width: 90%;
 }
 
-.login h2 {
+.signup h2,
+.signin h2 {
     font: normal 800 2em "dejanire-sans", sans-serif;
     color: #201f1f;
     text-transform: capitalize;
@@ -349,11 +362,13 @@ table tr #selectedItem {
     text-align: center;
 }
 
-.login input::placeholder {
+.signup input::placeholder,
+.signin input::placeholder {
     padding-left: 5px;
 }
 
-.login input {
+.signup input,
+.signin input {
     width: 95%;
     height: 50px;
     background: #ffffff;
@@ -361,7 +376,8 @@ table tr #selectedItem {
     margin-top: 25px;
 }
 
-.login input[type='submit'] {
+.signup input[type='submit'],
+.signin input[type='submit'] {
     width: 95%;
     height: 60px;
     border: 2px solid #cb1e5e;
@@ -371,7 +387,7 @@ table tr #selectedItem {
     cursor: pointer;
 }
 
-.login span {
+.signup span {
     color: #201f1f;
     font: normal 200 1em "dejanire-sans", sans-serif;
     text-align: center;
@@ -380,7 +396,7 @@ table tr #selectedItem {
     display: block;
 }
 
-.login a {
+.signup a {
     color: #201f1f;
     font: normal 200 1em "dejanire-sans", sans-serif;
     padding-left: 5px;

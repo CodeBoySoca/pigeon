@@ -1,6 +1,6 @@
 {% extends 'base.j2' %}
 {% block content %}
-<div class="login">
+<div class="signup">
   <h2>Sign up</h2>
   <form method="post">
     <input type="text" name="name" placeholder="Name" required>
@@ -9,7 +9,7 @@
     <input type="password" name="password" placeholder="Password" required>
     <input type="password" name="confirm-password" placeholder="Confirm Password" required>
     <input type="submit" value=" Sign up">
-    <span>Have account? <a href="">Sign here</a></span>
+    <span>Have account? <a href="{{ url_for('signin')}}">Sign here</a></span>
   </form> 
 </div>
 {% endblock %}

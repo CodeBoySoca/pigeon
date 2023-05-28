@@ -1,9 +1,14 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect, url_for, session
 import datetime
 import uuid
 import calendar
 from models import *
+from mongoframes import *
+import os
+
+
 app = Flask(__name__)
+app.config['SECRET_KEY'] = os.getenv('SECRET_KEY')
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
@@ -21,15 +26,32 @@ def index():
               password=User.hash_password(password)  
             ).insert()
             return render_template('mailbox.j2', username=username)
-    return render_template('login.j2')
+    return render_template('signup.j2')
 
-@app.route('/logout')
-def logout():
-    pass
+@app.route('/signin', methods=['GET', 'POST'])
+def signin():
+    if request.method == 'POST':
+        if user := User.get_user(request.form.get('username'), request.form.get('password')):
+           if user != StatusMessage.USER_DOES_NOT_EXIST.value and user != StatusMessage.USER_PASSWORD_COMBINATION.value:
+               session['user'] = str(user[0]._id)
+               return redirect(url_for('mailbox', user=session['user']))
+           else:
+               return redirect(url_for('signin'))
+    return render_template('signin.j2')
+    
 
-@app.route('/mailbox')
+@app.route('/signout')
+def signout():
+    session.pop('user', None)
+    return redirect(url_for('signin'))
+
+@app.route('/mailbox', methods=['GET', 'POST'])
 def mailbox():
-    return render_template('mailbox.j2')
+    if not session['user']:
+       return redirect(url_for('signin'))
+    else:
+       user = User.one(Q.username==session['user'])
+       return render_template('mailbox.j2', user=user)
 
 
 @app.route('/mailbox/sent')
