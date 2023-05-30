@@ -4,6 +4,7 @@ import uuid
 import calendar
 from models import *
 from mongoframes import *
+from bson import ObjectId
 import os
 
 
@@ -50,27 +51,40 @@ def mailbox():
     if not session['user']:
        return redirect(url_for('signin'))
     else:
-       user = User.one(Q.username==session['user'])
+       user = User.one(Q._id == ObjectId(session['user']))
+       print(user.contacts[1]['name'])
        return render_template('mailbox.j2', user=user)
 
 
-@app.route('/mailbox/sent')
+@app.route('/mailbox/sent', methods=['GET', 'POST'])
 def mailbox_sent():
-    return render_template('sent.j2')
+    if not session['user']:
+       return redirect(url_for('signin'))
+    else:
+       return render_template('sent.j2')
 
-@app.route('/mailbox/draft')
+@app.route('/mailbox/draft', methods=['GET', 'POST'])
 def mailbox_draft():
-    return render_template('draft.j2')
+    if not session['user']:
+       return redirect(url_for('signin'))
+    else:
+       return render_template('draft.j2')
 
 @app.route('/calendar')
 def pigeon_calendar():
-    cal = calendar.HTMLCalendar(firstweekday=0)
-    d = datetime.datetime.today()
-    return render_template('calendar.j2', calendar=cal.formatmonth(d.year, d.month))
+    if not session['user']:
+       return redirect(url_for('signin'))
+    else:
+       cal = calendar.HTMLCalendar(firstweekday=0)
+       d = datetime.datetime.today()
+       return render_template('calendar.j2', calendar=cal.formatmonth(d.year, d.month))
 
 @app.route('/contacts')
 def contacts():
-    return render_template('contacts.j2')
+    if not session['user']:
+       return redirect(url_for('signin'))
+    else:
+       return render_template('contacts.j2')
 
 
 if __name__ == '__main__':

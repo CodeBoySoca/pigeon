@@ -16,7 +16,8 @@ class User(Frame):
        'password',
        'image',
        'creation_date',
-       'messages'
+       'messages',
+       'contacts'
     }
 
     def hash_password(password):

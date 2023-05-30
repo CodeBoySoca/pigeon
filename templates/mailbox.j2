@@ -3,66 +3,48 @@
 <div class="mail-container">
     {% include 'sidebar.j2' %}
 
-
-
-
     <div class="inbox-list">
       <div class="search-contacts">  
         <input type="text" name="search"  placeholder="&#128269; Search contacts">
-      </div>
-
-        <div class="contacts">  
-            <div class="contact-image">
-                 <img src="" alt="contact image">
-             </div>
-             <ul>
-                 <li>Patricia Doe</li>
-                 <li>Help with website</li>
-             </ul>
-           </div>
-
-      <div class="contacts">      
-        <div class="contact-image">
+      </div>  
+      {% for message in user['messages'] %} 
+        <div class="contacts">    
+          <div class="contact-image">
              <img src="" alt="contact image">
           </div>
            <ul>
-                <li>Larry Doe</li>
-                <li>Conference Talk</li>
-            </ul>
-         </div>
+             <li> {{  message.sender }}</li>
+             <li> {{  message.subject }}</li>
+             <li class='message-date-visibility'> {{  message.message_date  }}</li>
+             <li class='message-visibility'> {{  message.message  }}</li>
+           </ul>
+        </div>
+        {% endfor %}
 
-      <div class="contacts">    
-         <div class="contact-image">
-            <img src="" alt="contact image">
-         </div>
-          <ul>
-            <li>Betty Doe</li>
-            <li>Hello</li>
-          </ul>
-       </div>
-
-     </div>
+      </div>
 
 
+    
 
-
-    <div class="main-content">
+      <div class="main-content">
         <div class="content-header">
            <div class="contact-content">
-             <img src="" alt="">
-             <h2>Patricia Doe</h2>
-             <p>Lawyer</p>
-           </div>
-        </div>
-        <div class="main-content-window">
-           <p>Aug, 22 2023</p>
-           <p>
-            futyftyuyiyuirtyufrtufrutfrtutu
-            yrtdrtyrtsyrweertuw46w4w445wyt4qw34528o5t
-           </p>
-           <p>  
-            ertwetyw4t34634634yy345y4ey64du5tyjut5r75e
-           </p>
+               <img src="" alt="">
+               <h2>Patricia Doe</h2>
+               <p>Lawyer</p>
+          </div>
+       </div>
+
+       <div class="main-content-window">
+        <p>Aug, 22 2023</p>
+        <p>
+         futyftyuyiyuirtyufrtufrutfrtutu
+         yrtdrtyrtsyrweertuw46w4w445wyt4qw34528o5t
+        </p>
+
+
+
+
            <div class="mail-button">
              <button>+</button>
            </div>

@@ -520,7 +520,10 @@ table tr #selectedItem {
     font: normal 900 2em "dejanire-sans", sans-serif;
 }
 
-
+.message-visibility,
+.message-date-visibility {
+    display: none;
+}
 
 .main-content-window {
     width: 100%;
