@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, redirect, url_for, session
 import datetime
+from dateutil import parser
 import uuid
 import calendar
 from models import *
@@ -51,9 +52,9 @@ def mailbox():
     if not session['user']:
        return redirect(url_for('signin'))
     else:
-       user = User.one(Q._id == ObjectId(session['user']))
-       print(user.contacts[1]['name'])
-       return render_template('mailbox.j2', user=user)
+       user = User.one(Q._id == ObjectId(session['user'])) 
+       message_dates = User.format_date(user['messages'])
+       return render_template('mailbox.j2', user=user, data=zip(user['messages'], message_dates))
 
 
 @app.route('/mailbox/sent', methods=['GET', 'POST'])

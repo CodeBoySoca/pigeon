@@ -7,19 +7,22 @@
       <div class="search-contacts">  
         <input type="text" name="search"  placeholder="&#128269; Search contacts">
       </div>  
-      {% for message in user['messages'] %} 
+
+
+      {% for user, message_dates in data %} 
         <div class="contacts">    
           <div class="contact-image">
              <img src="" alt="contact image">
           </div>
            <ul>
-             <li> {{  message.sender }}</li>
-             <li> {{  message.subject }}</li>
-             <li class='message-date-visibility'> {{  message.message_date  }}</li>
-             <li class='message-visibility'> {{  message.message  }}</li>
+             <li> {{  user.sender }}</li>
+             <li> {{  user.subject }}</li>
+             <li class='message-date-visibility'> {{  message_dates  }}</li>
+             <li class='message-visibility'> {{  user.message  }}</li>
            </ul>
         </div>
         {% endfor %}
+
 
       </div>
 

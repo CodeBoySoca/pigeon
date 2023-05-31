@@ -2,6 +2,8 @@ from mongoframes import *
 from pymongo import MongoClient
 from dotenv import load_dotenv
 from passlib.hash import pbkdf2_sha256
+from dateutil import parser
+
 from enum import Enum
 import os
 
@@ -35,11 +37,15 @@ class User(Frame):
     def get_user(username, password):
         user = User.verify_password(username, password)
         return user
+    
+    def format_date(messages):
+        message_dates = []
+        for i in range(len(messages)):
+             message_dates.append(parser.parse(messages[i]['message_date']).strftime('%B %d, %Y'))
+        return message_dates
 
 
-        
 
-        #return User({'$and': [{'username' : {'$eq' : username}}, {'password' : {'$eq' : hashed_password}}]})
 
 class Message(SubFrame):
     _fields = {
