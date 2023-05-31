@@ -2,8 +2,63 @@
 {% block content %}
 <div class="mail-container">
     {% include 'sidebar.j2' %}
-    {% include 'contact-list.j2' %}
-    <div class="main-content">
-    </div>    
+
+    <div class="inbox-list">
+      <div class="search-contacts">  
+        <input type="text" name="search"  placeholder="&#128269; Search contacts">
+      </div>  
+
+
+      {% for user, message_dates in data %} 
+      {% if user.message_type == 'draft' %}
+        <div class="contacts">    
+          <div class="contact-image">
+             <img src="" alt="contact image">
+          </div>
+           <ul>
+             <li> {{  user.sender }}</li>
+             <li> {{  user.subject }}</li>
+             <li class='message-date-visibility'> {{  message_dates  }}</li>
+             <li class='message-visibility'> {{  user.message  }}</li>
+           </ul>
+        </div>
+          {% endif %}
+        {% endfor %}
+
+
+      </div>
+
+
+    
+
+      <div class="main-content">
+        <div class="content-header">
+           <div class="contact-content">
+               <img src="" alt="">
+               <h2>Patricia Doe</h2>
+               <p>Lawyer</p>
+          </div>
+       </div>
+
+       <div class="main-content-window">
+        <p></p>
+        <p>
+        </p>
+
+
+
+
+           <div class="mail-button">
+             <button>+</button>
+           </div>
+        </div>
+        <div class="mail-composer">
+           <form method="post">
+              <textarea name="message" placeholder="Say something.."></textarea>
+              <br><button><i class="fa-solid fa-paper-plane"></i>Send</button>
+           </form>    
+        </div>
+    </div>
 </div>
+
 {% endblock %}

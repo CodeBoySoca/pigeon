@@ -62,14 +62,18 @@ def mailbox_sent():
     if not session['user']:
        return redirect(url_for('signin'))
     else:
-       return render_template('sent.j2')
+       user = User.one(Q._id == ObjectId(session['user'])) 
+       message_dates = User.format_date(user['messages'])
+       return render_template('sent.j2', user=user, data=zip(user['messages'], message_dates))
 
 @app.route('/mailbox/draft', methods=['GET', 'POST'])
 def mailbox_draft():
     if not session['user']:
        return redirect(url_for('signin'))
     else:
-       return render_template('draft.j2')
+       user = User.one(Q._id == ObjectId(session['user']))
+       message_dates = User.format_date(user['messages'])
+       return render_template('draft.j2', user=user, data=zip(user['messages'], message_dates))
 
 @app.route('/calendar')
 def pigeon_calendar():

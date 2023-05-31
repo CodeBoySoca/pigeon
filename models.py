@@ -44,9 +44,6 @@ class User(Frame):
              message_dates.append(parser.parse(messages[i]['message_date']).strftime('%B %d, %Y'))
         return message_dates
 
-
-
-
 class Message(SubFrame):
     _fields = {
         'sender',
