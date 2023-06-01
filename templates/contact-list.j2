@@ -1,36 +1,24 @@
 <div class="inbox-list">
-    <div class="search-contacts">  
-      <input type="text" name="search"  placeholder="&#128269; Search contacts">
-    </div>
+  <div class="search-contacts">  
+    <input type="text" name="search"  placeholder="&#128269; Search contacts">
+  </div>  
 
-      <div class="contacts">  
-          <div class="contact-image">
-               <img src="" alt="contact image">
-           </div>
-           <ul>
-               <li>Patricia Doe</li>
-               <li>Help with website</li>
-           </ul>
-         </div>
 
-    <div class="contacts">      
-      <div class="contact-image">
-           <img src="" alt="contact image">
-        </div>
-         <ul>
-              <li>Larry Doe</li>
-              <li>Conference Talk</li>
-          </ul>
-       </div>
-
+  {% for contact in user['contacts'] %} 
     <div class="contacts">    
-       <div class="contact-image">
-          <img src="" alt="contact image">
-       </div>
-        <ul>
-          <li>Betty Doe</li>
-          <li>Hello</li>
-        </ul>
-     </div>
+      <div class="contact-image">
+         <img src="" alt="contact image">
+      </div>
+       <ul>
+         <li> {{  contact.name }}</li>
+         <li> {{  contact.title }}</li>
+         <li class='message-visibility email'>{{  contact.email }}</li>
+         <li class='message-visibility telephone'>{{  contact.telephone }}</li>
+         <li class='message-visibility website'>{{  contact.website }}</li>
+         <li class='message-visibility notes'> {{  contact.notes }}</li>
+       </ul>
+    </div>
+    {% endfor %}
 
-   </div>
+
+  </div>

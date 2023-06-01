@@ -47,7 +47,7 @@ def signout():
     session.pop('user', None)
     return redirect(url_for('signin'))
 
-@app.route('/mailbox', methods=['GET', 'POST'])
+@app.route('/mailbox/inbox', methods=['GET', 'POST'])
 def mailbox():
     if not session['user']:
        return redirect(url_for('signin'))
@@ -89,7 +89,8 @@ def contacts():
     if not session['user']:
        return redirect(url_for('signin'))
     else:
-       return render_template('contacts.j2')
+       user = User.one(Q._id == ObjectId(session['user']))
+       return render_template('contacts.j2', user=user)
 
 
 if __name__ == '__main__':
