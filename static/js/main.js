@@ -16,8 +16,6 @@ cells.forEach(function(cell) {
 
 
 
-
-
 if(window.location.pathname.split('/')[2] === 'inbox' || window.location.pathname.split('/')[2] === 'sent' || window.location.pathname.split('/')[2] === 'draft'){
     document.querySelector('.contact-content > h2').textContent=document.querySelector('.contacts ul li:first-of-type').textContent
     document.querySelector('.contact-content > p').textContent=document.querySelector('.contacts ul li:nth-child(2)').textContent
@@ -59,9 +57,67 @@ if(window.location.pathname.split('/')[1] === 'contacts'){
     }
 }
 
+if(window.location.pathname.split('/')[1] === 'calendar'){
+  document.querySelector('.calendar > button').addEventListener('click', (e) => {
+ 
+    document.querySelector('.overlay').style.display='block'
+    let calendarDiv = document.createElement('div')
+    let h3 = document.createElement('h3')
+    let form = document.createElement('form')
+    let calendarDate = document.createElement('input')
+    let event = document.createElement('input')
+    let editButton = document.createElement('input')
+    let saveButton = document.createElement('input')
+ 
+    calendarDiv.setAttribute('id', 'calendar-container')
+    form.setAttribute('method', 'post')
+    calendarDate.setAttribute('type', 'date')
+    calendarDate.setAttribute('placeholder', 'Start date')
+    event.setAttribute('type', 'text')
+    editButton.setAttribute('type', 'button')
+    saveButton.setAttribute('type', 'button')
+    editButton.setAttribute('value', 'Edit')
+    editButton.setAttribute('id', 'edit')
+    saveButton.setAttribute('value', 'Save')
+    event.setAttribute('name', 'event')
+    event.setAttribute('placeholder', 'Add event')
+    h3.innerHTML='Calendar Event'
+ 
+ 
+    document.querySelector('.overlay').appendChild(calendarDiv)
+    document.querySelector('#calendar-container').appendChild(h3)
+    document.querySelector('#calendar-container').appendChild(form)
+    document.querySelector('#calendar-container form').appendChild(calendarDate)
+    document.querySelector('#calendar-container form').appendChild(event)
+    document.querySelector('#calendar-container form').appendChild(editButton)
+    document.querySelector('#calendar-container form').appendChild(saveButton)
+    
+ })
+ 
+ 
+ document.querySelector('.overlay a').addEventListener('click', fadeWindow)
+ 
+ 
+ function fadeWindow(){
+     anime({
+       targets: '.overlay',
+       opacity: [1, 0],
+       duration: 3000
+   })
+ 
+ }
+}
 
+// document.querySelectorAll('.contacts').forEach(  el => {
 
+//     document.querySelector('#remove').addEventListener('click', (e) => {
+//        //e.preventDefault()
+//        let v = document.querySelector('.contacts').getAttribute('data-value')
+//         anime({
+//           targets: el.classList.remove('contacts'),
+//           translateX: -400,
+//           easing: 'easeInOutExpo'
+//         })
+//     })
 
-
-
-
+// })

@@ -5,7 +5,7 @@
 
 
   {% for contact in user['contacts'] %} 
-    <div class="contacts">    
+    <div class="contacts" data-value='{{ loop.index }}'>    
       <div class="contact-image">
          <img src="" alt="contact image">
       </div>

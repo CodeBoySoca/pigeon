@@ -131,10 +131,93 @@ ul li {
 
 /** Calendar */
 
+.overlay {
+    background: rgba(0, 0, 0, 0.8);
+    width: 100%;
+    height: 100vh;
+    z-index: 99999;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+}
+
+.overlay a {
+    color: #fff;
+    font: normal 100 5em "dejanire-sans", sans-serif;
+    text-decoration: none;
+    width: 5%;
+    height: 50px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    right: 5px;
+    top: 15px;
+}
+
+#calendar-container {
+    width: 25%;
+    height: auto;
+    padding-bottom: 100px !important;
+    background: #ffffff;
+    filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.3));
+    border-radius: 25px;
+    margin: 10% auto 0 auto;
+    padding: 4%;
+    display: block;
+}
+
+#calendar-container h3 {
+    text-align: center;
+    font: normal 900 1.2em "dejanire-sans", sans-serif;
+    color: #cb1e5e;
+    text-transform: capitalize;
+    margin-bottom: 5px;
+
+}
+
+
+#calendar-container form input[type='date'],
+#calendar-container form input[type='text'] {
+    border: 1px solid #e1e1e1;
+    width: 99%;
+    height: 40px;
+    margin-top: 25px;
+    outline: none;
+}
+
+#calendar-container #edit {
+    margin-right: 25px !important;
+}
+
+
+
+#calendar-container form input[type='button'] {
+    margin-top: 35px;
+    border: 2px solid #fe176c;
+    color: #fe176c;
+    font: normal 100 1em "dejanire-sans", sans-serif;
+    width: 47%;
+    height: 50px;
+    background: none;
+    cursor: pointer;
+}
+
+
 .calendar {
     border: none;
     width: 100%;
+}
 
+.calendar button {
+    background: none;
+    border: none;
+    font: normal 100 3em "dejanire-sans", sans-serif;
+    color: #cb1e5e;
+    float: right;
+    margin: 25px 50px 0 0;
+    cursor: pointer;
 }
 
 
@@ -195,8 +278,6 @@ table tr #selectedItem {
     color: #cb1e5e;
     text-transform: capitalize;
     margin-bottom: 25px;
-
-
 }
 
 .calendar-event form {
@@ -412,7 +493,7 @@ table tr #selectedItem {
     background: #ffffff;
     filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.3));
     border-radius: 25px;
-    margin: 8% auto 0 auto;
+    margin: 10% auto 0 auto;
     padding: 5%;
 }
 
@@ -449,9 +530,6 @@ table tr #selectedItem {
     font: normal 300 1.2em "dejanire-sans", sans-serif;
     margin-bottom: 15px;
 }
-
-
-
 
 .contact-details p {
     line-height: 2em !important;
