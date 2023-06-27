@@ -1,9 +1,13 @@
 <div class="sidebar">
     <div class="mail-options">
+        <!-- profile -->
         <div class="profile">
             <img src="" alt="">
             <p>Paul Doe</p>
          </div>
+         <!-- end -->
+
+         <!-- Mail -->
         <div class="mail">
             <ul>
                 <li><a href="{{ url_for('mailbox')}}"><i class="fa-solid fa-envelope"></i>Inbox</a></li>
@@ -11,6 +15,9 @@
                 <li><a href="{{ url_for('mailbox_draft')}}"><i class="fa-solid fa-file"></i>Draft</a></li>
             </ul>
         </div>
+        <!-- end -->
+
+        <!-- Mail features  --> 
         <div class="mail-features">
            <h3>features</h3> 
             <ul>
@@ -18,8 +25,15 @@
                 <li><a href="{{ url_for('contacts') }}"><i class="fa-regular fa-address-card"></i>Contacts</a></li>
             </ul>
         </div>
+        <!-- end -->
+
     </div>
+    <!-- end (mail-options) -->
+
+    <!-- footer -->
     <div class="sidebar-footer">
        <form><button type="submit" formaction="{{ url_for('signout')}}" >Logout</button></form>
     </div>
+    <!-- end -->
+    
 </div>

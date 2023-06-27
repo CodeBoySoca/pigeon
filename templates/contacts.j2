@@ -1,14 +1,15 @@
 {% extends 'base.j2' %}
 {% block content %}
+
 <div class="mail-container">
     {% include 'sidebar.j2' %}
     {% include 'contact-list.j2' %}
 
-
       <div class="main-content">
+        <!-- Contact container -->
         <div class="contact-header">
 
-            <div class="contact-details">
+           <div class="contact-details">
               <button id="remove">-</button>  
               <img src="" alt="">
               <h2></h2>
@@ -18,17 +19,20 @@
                <li></li>
                <li></li>
               </ul>
-              <p class="note">
-              </p>
-          
-            </div>
+              <p class="note"></p>
+           </div>
+           
             <button>Edit</button>
             <button>Save</button>
          </div>
-         
+         <!-- end -->
+
+         <!-- Mail button -->   
          <div class="mail-button">
           <button>+</button>
         </div>
+        <!-- end -->
+
      </div>
 </div>
 {% endblock %}

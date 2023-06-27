@@ -2,35 +2,7 @@
 {% block content %}
 <div class="mail-container">
     {% include 'sidebar.j2' %}
-
-    <div class="inbox-list">
-      <div class="search-contacts">  
-        <input type="text" name="search"  placeholder="&#128269; Search contacts">
-      </div>  
-
-
-      {% for user, message_dates in data %} 
-      {% if user.message_type == 'draft' %}
-        <div class="contacts">    
-          <div class="contact-image">
-             <img src="" alt="contact image">
-          </div>
-           <ul>
-             <li> {{  user.sender }}</li>
-             <li> {{  user.subject }}</li>
-             <li class='message-date-visibility'> {{  message_dates  }}</li>
-             <li class='message-visibility'> {{  user.message  }}</li>
-           </ul>
-        </div>
-          {% endif %}
-        {% endfor %}
-
-
-      </div>
-
-
-    
-
+    {% include 'contact-list.j2' %}
       <div class="main-content">
         <div class="content-header">
            <div class="contact-content">

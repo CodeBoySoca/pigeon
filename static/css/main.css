@@ -204,6 +204,13 @@ ul li {
     cursor: pointer;
 }
 
+td span {
+    margin-top: 10px;
+    display: block;
+    float: right;
+    clear: both;
+    font: normal 100 0.8em "dejanire-sans", sans-serif;
+}
 
 .calendar {
     border: none;

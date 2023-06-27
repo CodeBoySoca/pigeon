@@ -92,6 +92,10 @@ def contacts():
        user = User.one(Q._id == ObjectId(session['user']))
        return render_template('contacts.j2', user=user)
 
+@app.errorhandler(404)
+def page_not_found(error):
+    return render_template('404.j2')
+
 
 if __name__ == '__main__':
     app.run(debug=True)
